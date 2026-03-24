@@ -1,11 +1,15 @@
 import random
 
+MAX_NUM_A = 10
+MAX_NUM_B = 5
+NEGATIVES_ALLOWED = False
+
 def gen_nums():
     '''
     Generate two random numbers.
     '''
-    a = randint(0,MAX_NUM_A)
-    b = randint(0, MAX_NUM_B)
+    a = random.randint(0,MAX_NUM_A)
+    b = random.randint(0, MAX_NUM_B)
     return a, b
 
 def add(a, b):
@@ -30,4 +34,17 @@ def subtract(a, b):
 
 functions = [add, subtract]
 
+def ask_question():
+    '''
+    Generate two random numbers and a random function.
+    Use the function to generate a question and answer.
+    Return the question and answer.
+    '''
+    a, b = gen_nums()
+    func = random.choice(functions)
+    question, answer = func(a, b)
 
+    while not NEGATIVES_ALLOWED and answer < 0:
+        print('Generated a negative answer, regenerating...')
+        question, answer = ask_question()
+    return question, answer
