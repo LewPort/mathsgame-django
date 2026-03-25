@@ -2,7 +2,7 @@ import random
 
 MAX_NUM_A = 10
 MAX_NUM_B = 5
-NEGATIVES_ALLOWED = False
+NEGATIVES_ALLOWED = True
 
 def gen_nums():
     '''

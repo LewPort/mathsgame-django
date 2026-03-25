@@ -12,14 +12,14 @@
     <h1>{{ title }}</h1>
     <div class="verdict">
     {% if verdict == True %}<p id="correct">Correct!</p>
-    {% elif verdict == False %}<p id="incorrect">Oops,try again!</p>
+    {% elif verdict == False %}<p id="incorrect">Oops, try again!</p>
     {% else %}
     {% endif %}
     </div>
     <p id="question">{{ question }}</p>
     <form>
         <input type="number" name="guess" autofocus required>
-        <button type="submit">Go!</button>
+        <button type="submit" hidden>Go!</button>
     </form>
     <p id="score">Score: {{ score }}</p>
 </body>
